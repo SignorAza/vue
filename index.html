@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+  
+    <div id="app">
+      <h1>Выберите категорию</h1>
+      <h3>Примечание: Нельзя ввести цифры и длинна слова должно быть больше 1</h3>
+      
+        <input type="text"  v-model="name">
+        <select v-model="category">
+          <option>csgo</option>
+          <option >dota</option>
+          <option >pubg</option>
+        </select>
+        <button class="btn" @click="add">Добавить игрока</button>
+     
+
+
+
+        <div class="categories">
+          <div class="category csgo">
+              <h2>Csgo</h2>
+              <div class="category__item" v-for="player in games.csgo" :key="player">
+                  <p>{{ player }}</p>
+              </div>
+          </div>
+          <div class="category dota">
+              <h2>Dota</h2>
+              <div class="category__item" v-for="player in games.dota" :key="player">
+                  <p>{{ player }}</p>
+              </div>
+          </div>
+          <div class="category pubg">
+              <h2>Pubg</h2>
+              <div class="category__item" v-for="player in games.pubg" :key="player">
+                  <p>{{ player }}</p>
+              </div>
+          </div>
+      </div>
+    </div>
+    
+    
+    <script src="main.js"></script>
+</body>
+</html>
